@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import User from "./components/User";
+
+const friends = [
+  { id: 1, name: "Ahmet" },
+  { id: 2, name: "Mehmet" },
+  { id: 3, name: "Murat" },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <User
+        name="Yiğit"
+        surname="Yüre"
+        age={25}
+        isLoggedIn={true}
+        friends={friends}
+        address={{ title: "Izmir", zip: 35000 }}
+      />
+    </>
   );
 }
 
