@@ -1,3 +1,3 @@
-# patika.dev react exercise 1
+# Learning React With Patika.dev
 
-Fetching api with axios
+Please switch between branches for topics and examples
