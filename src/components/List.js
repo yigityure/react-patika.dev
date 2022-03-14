@@ -51,6 +51,10 @@ const List = (props) => {
     } else if (!props.completed) {
       setAllActive(!allActive);
     }
+
+    if (activeList.length === 0) {
+      setAllCheck(true);
+    }
   };
 
   const buttonClickHandler = (e) => {
@@ -60,7 +64,11 @@ const List = (props) => {
 
     if (props.active && props.completed) {
       updatedList.splice(props.list.indexOf(e.target.value), 1);
-      checkedList.splice(props.checked.indexOf(e.target.value), 1);
+      if (props.checked.includes(e.target.value)) {
+        checkedList.splice(props.checked.indexOf(e.target.value), 1);
+      } else {
+        uncheckedList.splice(props.unchecked.indexOf(e.target.value), 1);
+      }
     } else if (!props.active) {
       updatedList.splice(props.list.indexOf(e.target.value), 1);
       checkedList.splice(props.checked.indexOf(e.target.value), 1);
